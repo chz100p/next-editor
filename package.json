@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "watch": "webpack-serve --no-reload --port 8099",
-    "build:prod": "rimraf dist && NODE_ENV=production webpack",
+    "build:prod": "rimraf dist && cross-env NODE_ENV=production webpack",
     "release": "yarn standard-version && yarn standard-changelog",
     "deploy": "yarn build:prod && netlify deploy -p dist",
     "lint": "tslint src/**.ts src/**.tsx",
@@ -51,6 +51,7 @@
     "babel-minify-webpack-plugin": "0.3.1",
     "copy-webpack-plugin": "4.5.2",
     "coveralls": "3.0.2",
+    "cross-env": "^5.2.0",
     "css-loader": "1.0.0",
     "docz": "0.12.5",
     "enzyme": "3.6.0",
